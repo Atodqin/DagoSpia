@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rossi's Outfitters'</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Mio.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    
+    <header>
+        
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <input type="text" placeholder="cerca" id="prodotto" />
+        <a href="#">Vestiti</a><br>
+        <a href="#">T-shirt e Top</a><br>
+        <a href="#">Pantaloni</a><br>
+        <a href="#">Camicie</a><br>
+        <a href="#">Jeans</a><br>
+        <a href="#">Gonne</a><br>
+        <a href="#">Giacche</a><br>
+        <a href="#">Cappotti</a><br>
+        <a href="#">Intimo</a><br>
+        <a href="#">Calze</a><br>
+    </div>
+
+
+    <div id="main">
+      
+         @RenderBody()
+
+    </div>
+
+
+</body>
+    <script src="~/js/Mio.js"></script>
+</html>

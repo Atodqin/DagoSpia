@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Nuova taglia";
+}
+
+<h2>Inserimento nuova taglia</h2>
+
+
+<form action="/Taglia/AggiungiTaglia">
+
+    <input type="text" placeholder="Nome.." name="nome" /><br />
+    <input type="submit" value="Salva" />
+
+</form>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script>
+        alert('@ViewBag.ErrorMessage');
+    </script>
+}

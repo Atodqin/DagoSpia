@@ -1,0 +1,89 @@
+﻿<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Rossi's Outfitters'</title>
+        <link rel="stylesheet" href="~/css/basic.css" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <header class="site-header">
+
+            <div class="navbar">
+
+                <a href="/home/index">Home</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Inventario
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/Quantita/Elenco">Elenco</a>
+                        <a href="/Quantita/FormNuovaQuantita">Nuovo</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Prodotti
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/Prodotto/Elenco">Elenco</a>
+                        <a href="/Prodotto/FormNuovoProdotto">Nuovo</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Colori
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/Colore/Elenco">Elenco</a>
+                        <a href="/Colore/FormNuovoColore">Nuovo</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Taglie
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/Taglia/Elenco">Elenco</a>
+                        <a href="/Taglia/FormNuovaTaglia">Nuovo</a>
+                    </div>
+                </div>
+
+                <div class="dropdown login">
+                    <button class="dropbtn">
+                        Accesso
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Help
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/home/guida">Guida</a>
+                        <a href="/home/Crediti">Crediti</a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        
+        <div id="main">
+
+            @RenderBody()
+
+        </div>
+        
+    </body>
+</html>

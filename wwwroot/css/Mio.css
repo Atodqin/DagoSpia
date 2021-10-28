@@ -1,0 +1,144 @@
+﻿h1 {
+    text-align: center;
+}
+
+.sidenav {
+    text-align: center;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition-timing-function: linear;
+    text-align: center;
+}
+
+
+@media screen and (max-height: 450px) {
+.sidenav {
+    padding-top: 15px;
+}
+
+.sidenav a {
+    font-size: 18px;
+}
+}
+
+.btn {
+    background-color: #111;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 1
+}
+
+
+.container{
+    overflow: auto;
+    float: right;
+    text-align: center;
+    background-color: none;
+    color: black;
+    /*border: 1px solid black;*/
+    padding: 15px;
+    margin: 15px;
+    width: 40%;
+    height: 500px;
+}
+
+img {
+    float: left;
+    overflow: auto;
+    width: 320px;
+    height: 400px;
+}
+.par:first-letter {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.par {
+    color: #424242;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 40px auto;
+    text-transform: lowercase;
+    line-height: 145%;
+    font-size: 14pt;
+    font-variant: small-caps;
+}
+.ref:first-letter{
+    font-size: 12px;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #000;
+    text-align: center;
+    font-weight: 100;
+}
+
+.ref {
+    font-family: 'Hoefler Text', Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 1.75em;
+    letter-spacing: .2em;
+    line-height: 1.1em;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.specifiche {
+    overflow: auto;
+    text-align: center;
+    background-color: none;
+    color: black;
+    /*border: 1px solid black;*/
+    padding: 15px;
+    margin: 15px;
+    width: auto;
+    height: auto;
+}
+.box {
+    
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+}

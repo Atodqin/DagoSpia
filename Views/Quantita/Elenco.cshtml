@@ -1,0 +1,67 @@
+﻿@model List<ProjectWork.Models.Quantita>;
+
+@{
+    ViewData["Title"] = "Prodotti";
+}
+
+<div class="formprod">
+
+    <form class="ricerca" action="/Quantita/Elenco">
+        <br /><br>
+
+        <input type="text" placeholder="Cerca.." name="nomeQuantita" />
+        
+        <br /><br />
+        <select name="prodotto">
+            <option value="" selected="selected">Prodotto</option>
+            @foreach (var p in ViewBag.listaProdotti)
+            {
+                <option value="@p.Nome">@p.Nome</option>
+            }
+        </select><br />
+        
+        <select name="colore">
+            <option value="" selected="selected">Colore</option>
+            @foreach (var c in ViewBag.listaColori)
+            {
+                <option value="@c.Nome">@c.Nome</option>
+            }
+        </select><br />
+        
+        <select name="taglia">
+            <option value="" selected="selected">Taglia</option>
+            @foreach (var t in ViewBag.listaTaglie)
+            {
+                <option value="@t.Nome">@t.Nome</option>
+            }
+        </select><br />
+        <input type="submit" value="Cerca" />
+            
+    </form>
+
+    @foreach (var p in Model)
+    {
+        <div class="testo"><a class="btn" href="/Quantita/Dettagli/@p.ProdottoId&@p.ColoreId&@p.TagliaId">@p.Prodotti.Nome</a></div>
+        <div class="testo">Prezzo: @p.Prodotti.Prezzo $</div>
+        <div class="testo">Taglia: @p.Taglie.Nome</div>
+        <div class="testo">Colore: @p.Colori.Nome</div>
+        if (p.Quantitativo == 0)
+        {
+            <div style="background-color:red" class="testo">Attenzione! Aticolo Terminato </div>
+        }
+        else if (p.Quantitativo > 0 && p.Quantitativo < 10)
+        {
+            <div style="background-color:red" class="testo">Quantità: @p.Quantitativo </div>
+        }
+        else
+        {
+            <div class="testo">Quantità: @p.Quantitativo </div>
+        }
+
+        <p>
+            <a class="btn" href="/Quantita/FormModificaQuantita/@p.ProdottoId&@p.ColoreId&@p.TagliaId">MODIFICA</a>
+            <a class="btn" href="/Quantita/Elimina/@p.ProdottoId&@p.ColoreId&@p.TagliaId">ELIMINA</a>
+        </p>
+        <hr />
+    }
+</div>

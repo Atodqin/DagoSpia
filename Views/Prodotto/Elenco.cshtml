@@ -1,0 +1,22 @@
+﻿@model List<ProjectWork.Models.Prodotto>;
+
+@{
+    ViewData["Title"] = "Prodotti";
+}
+
+<div class="formprod">
+
+<div class="content">
+    @foreach (var p in Model)
+    {
+    <p class="testo"><a class="btn" href="/Prodotto/dettagli/@p.Id">@p.Nome</a></p>
+    <p class="testo">Categoria: @p.Categoria</p>
+    <p class="testo">Prezzo: @p.Prezzo $</p>
+
+    <p>
+    <a class="btn" href="/Prodotto/FormModificaProdotto/@p.Id">MODIFICA</a>
+    <a class="btn" href="/Prodotto/Elimina/@p.Id">ELIMINA</a>
+    </p>
+    <hr />}
+</div>
+</div>

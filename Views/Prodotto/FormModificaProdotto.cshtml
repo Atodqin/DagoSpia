@@ -1,0 +1,23 @@
+﻿@model ProjectWork.Models.Prodotto;
+
+@{
+    ViewData["Title"] = "Modifica prodotto";
+}
+
+<br />
+<a class="btn2" href="/Prodotto/Elenco/">Indietro</a>
+<br />
+
+<h2>Modifica Prodotto</h2>
+
+<form action="/Prodotto/ModificaProdotto">
+
+    <input type="hidden" name="id" value="@Model.Id" readonly />
+    <input type="text" placeholder="Nome.." name="nome" value="@Model.Nome" /><br />
+    <input type="text" placeholder="Categoria.." name="categoria" value="@Model.Categoria" /><br />
+    <input type="number" min="0" placeholder="Prezzo.." name="prezzo" value="@Model.Prezzo" /><br />
+    <input type="text" placeholder="URL foto.." name="foto" value="@Model.Foto" /><br />
+    <input type="submit" value="Salva" />
+    
+
+</form>

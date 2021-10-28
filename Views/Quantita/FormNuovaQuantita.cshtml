@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Nuovo prodotto";
+}
+
+<h2>Inserimento nuovo prodotto</h2>
+
+
+<form action="/Quantita/AggiungiQuantita">
+
+    <p>
+        Prodotto:
+        <select name="prodottoid">
+            @foreach (var p in ViewBag.listaProdotti)
+            {
+                <option value="@p.Id">@p.Nome</option>
+            }
+        </select>
+    </p>
+    <p>
+        Colore:
+        <select name="coloreid">
+            @foreach (var c in ViewBag.listaColori)
+            {
+                <option value="@c.Id">@c.Nome</option>
+            }
+        </select>
+    </p>
+    <p>
+        Taglia:
+        <select name="tagliaid">
+            @foreach (var t in ViewBag.listaTaglie)
+            {
+                <option value="@t.Id">@t.Nome</option>
+            }
+        </select>
+    </p>
+    <p>
+        Quantità:
+    </p>
+    <input type="number" min="0" placeholder="Quantità.." name="quantitativo" /><br /><br />
+    <input type="submit" value="Salva" />
+
+</form>
+@if (ViewBag.ErrorMessage1 != null)
+{
+    <script>
+        alert('@ViewBag.ErrorMessage1');
+    </script>
+}
+else if (ViewBag.ErrorMessage2 != null)
+{
+    <script>
+        alert('@ViewBag.ErrorMessage2');
+    </script>
+}

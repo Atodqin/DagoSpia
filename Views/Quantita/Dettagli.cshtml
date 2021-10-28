@@ -1,0 +1,14 @@
+﻿@model ProjectWork.Models.Quantita;
+
+
+@{
+    ViewData["Title"] = $"{Model.Prodotti.Nome}";
+}
+<h2>Dettagli @Model.Prodotti.Nome</h2>
+
+<div class="testo">
+    <p>Prodotto: @Model.Prodotti.Nome</p>
+    <p>Taglia: @Model.Taglie.Nome</p>
+    <p>Colore: @Model.Colori.Nome</p>
+    <p>Quantità: @Model.Quantitativo</p>
+</div>

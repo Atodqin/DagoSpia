@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Nuovo prodotto";
+}
+
+<h2>Inserimento nuovo prodotto</h2>
+
+
+<form action="/Prodotto/AggiungiProdotto">
+
+    <input type="text" placeholder="Nome.." name="nome" /><br />
+    <input type="text" placeholder="Categoria.." name="categoria" /><br />
+    <input type="number" min="0" placeholder="Prezzo.." name="prezzo" /><br />
+    <input type="text" placeholder="URL foto.." name="foto" /><br />
+    <input type="submit" value="Salva" />
+
+</form>

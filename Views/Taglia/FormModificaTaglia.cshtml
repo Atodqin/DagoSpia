@@ -1,0 +1,22 @@
+﻿@model ProjectWork.Models.Taglia;
+
+@{
+    ViewData["Title"] = "Modifica taglia";
+}
+
+<h2>Modifica Taglia</h2>
+
+<form action="/Taglia/ModificaTaglia">
+
+    <input type="hidden" name="id" value="@Model.Id" readonly />
+    <input type="text" placeholder="Nome.." name="nome" value="@Model.Nome" /><br />
+    <input type="submit" value="Salva" />
+    <a class="btn" href="/Taglia/Elenco/">Indietro</a>
+
+</form>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script>
+        alert('@ViewBag.ErrorMessage');
+    </script>
+}

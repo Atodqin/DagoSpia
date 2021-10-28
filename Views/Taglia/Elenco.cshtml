@@ -1,0 +1,22 @@
+﻿@model List<ProjectWork.Models.Taglia>;
+
+@{
+    ViewData["Title"] = "Taglie";
+}
+
+<div class="formprod">
+    <p>
+        <a class="btn" href="/Taglia/FormNuovaTaglia/">AGGIUNGI</a>
+    </p>
+
+    @foreach (var t in Model)
+    {
+        <p class="testo" >Taglia: @t.Nome</p>
+
+        <p>
+            <a class="btn" href="/Taglia/FormModificaTaglia/@t.Id">MODIFICA</a>
+            <a class="btn" href="/Taglia/Elimina/@t.Id">ELIMINA</a>
+        </p>
+        <hr />
+    }
+</div>

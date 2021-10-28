@@ -1,0 +1,14 @@
+﻿@model ProjectWork.Models.Prodotto;
+@{
+    ViewData["Title"] = $"{Model.Nome}";
+}
+<h2>Dettagli @Model.Nome</h2>
+
+<div class="testo">
+
+<p>ID: @Model.Id</p>
+<p>Nome: @Model.Nome</p>
+<p>Categoria: @Model.Categoria</p>
+<p>Prezzo: @Model.Prezzo $</p>
+
+</div>

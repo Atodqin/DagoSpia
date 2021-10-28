@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Nuovo colore";
+}
+
+<h2>Inserimento nuovo colore</h2>
+
+
+<form action="/Colore/AggiungiColore">
+
+    <input type="text" placeholder="Nome.." name="nome" /><br />
+    <input type="submit" value="Salva" />
+
+</form>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script>
+        alert('@ViewBag.ErrorMessage');
+    </script>
+}
+

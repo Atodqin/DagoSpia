@@ -1,0 +1,85 @@
+﻿@model ProjectWork.Models.Quantita;
+
+@{
+    ViewData["Title"] = "Modifica prodotto";
+}
+
+<h2>Modifica prodotto</h2>
+
+<form action="/Quantita/ModificaQuantita">
+    <input type="hidden" value="@Model.ProdottoId" name="oldprodottoid" readonly />
+    <input type="hidden" value="@Model.TagliaId" name="oldtagliaid" readonly />
+    <input type="hidden" value="@Model.ColoreId" name="oldcoloreid" readonly />
+    <p>
+        Prodotto:
+        <select name="prodottoid">
+            @foreach (var p in ViewBag.listaProdotti)
+            {
+                if (p.Id == Model.ProdottoId)
+                {
+
+                    @p.Nome
+
+                    <option selected="selected" value="@p.Id"></option>
+                }
+                else
+                {
+                    <option value="@p.Id">@p.Nome</option>
+                }
+            }
+        </select>
+    </p>
+    <p>
+        Colore:
+        <select name="coloreid">
+            @foreach (var c in ViewBag.listaColori)
+            {
+                if (c.Id == Model.ColoreId)
+                {
+
+                    @c.Nome
+
+                    <option selected="selected" value="@c.Id">@c.Nome</option>
+                }
+                else
+                {
+                    <option value="@c.Id">@c.Nome</option>
+                }
+            }
+        </select>
+    </p>
+    <p>
+        Taglia:
+        <select name="tagliaid">
+            @foreach (var t in ViewBag.listaTaglie)
+            {
+                if (t.Id == Model.TagliaId)
+                {
+
+                    @t.Nome
+
+                    <option selected="selected" value="@t.Id">@t.Nome</option>
+                }
+                else
+                {
+                    <option value="@t.Id">@t.Nome</option>
+                }
+            }
+        </select>
+    </p>
+
+    <p>
+        Quantità:
+    </p>
+    <input type="number" min="0" placeholder="Quantità.." name="quantitativo" value="@Model.Quantitativo" /><br /><br />
+    <input type="submit" value="Salva" />
+    <a class="btn" href="/Quantita/Elenco/">Indietro</a>
+
+</form>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script>
+        alert('@ViewBag.ErrorMessage');
+    </script>
+}
+

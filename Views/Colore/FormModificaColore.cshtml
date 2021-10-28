@@ -1,0 +1,24 @@
+﻿@model ProjectWork.Models.Colore;
+
+@{
+    ViewData["Title"] = "Modifica colore";
+}
+
+<h2>Modifica Colore</h2>
+<div>
+    <form action="/Colore/ModificaColore">
+
+        <input type="hidden" name="id" value="@Model.Id" readonly />
+        <input type="text" placeholder="Nome.." name="nome" value="@Model.Nome" /><br />
+        <input type="submit" value="Salva" />
+        <a class="btn" href="/Colore/Elenco/">Indietro</a>
+
+    </form>
+</div>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <script>
+            alert('@ViewBag.ErrorMessage');
+        </script>
+    }
+
